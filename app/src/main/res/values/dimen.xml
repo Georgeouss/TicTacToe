@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="titleSize">56sp</dimen>
+    <dimen name="editTextLabelSize">12sp</dimen>
+    <dimen name="cellWidth">124dp</dimen>
+    <dimen name="editTextSize">17sp</dimen>
+    <dimen name="labelMarginTop">8dp</dimen>
+    <dimen name="editTextHeight">60dp</dimen>
+    <dimen name="buttonHeight">40dp</dimen>
+    <dimen name="buttonTextSize">14sp</dimen>
+    <dimen name="subscriptTextSize">12sp</dimen>
+    <dimen name="categoryMargin">16dp</dimen>
+    <dimen name="categoryWidth">220dp</dimen>
+    <dimen name="categoryDivider">10dp</dimen>
+    <dimen name="tagsPaddingX">4dp</dimen>
+    <dimen name="tagsPaddingY">6dp</dimen>
+    <dimen name="ovalHeight">65dp</dimen>
+    <dimen name="bezierHeightProgressBar">82dp</dimen>
+    <dimen name="progressBarHeight">7dp</dimen>
+    <dimen name="progressMargin">6dp</dimen>
+    <dimen name="swipeAnimationLength">140dp</dimen>
+    <dimen name="scrollLenght">100dp</dimen>
+    <dimen name="feedbackMargin">3dp</dimen>
+    <dimen name="topSeparationMargin">32dp</dimen>
+    <dimen name="defaultMargin">16sp</dimen>
+</resources>
