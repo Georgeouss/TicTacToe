@@ -1,145 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/title_txv"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/defaultMargin"
-        android:fontFamily="monospace"
-        android:text="@string/name"
-        android:textAlignment="center"
-        android:textColor="@color/colorPrimary"
-        android:textSize="@dimen/titleSize"
-        app:layout_constraintBottom_toTopOf="@id/board_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
+
+        <variable
+                name="viewModel"
+                type="com.georgi.tictactoe.viewModel.BoardViewModel" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/board_view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/topSeparationMargin"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_txv">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            tools:context=".MainActivity">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.33" />
+        <TextView
+                android:id="@+id/title_txv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/defaultMargin"
+                android:fontFamily="casual"
+                android:text="@string/name"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/titleSize"
+                app:layout_constraintBottom_toTopOf="@id/board_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.66" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/board_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_margin="@dimen/defaultMargin"
+                android:layout_marginTop="@dimen/topSeparationMargin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_txv">
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:background="@drawable/tic_tac_bg"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.33" />
 
-        <ImageButton
-            android:id="@+id/cell1_btn"
-            android:layout_width="@dimen/cellWidth"
-            android:layout_height="0dp"
-            android:background="@android:color/transparent"
-            app:layout_constraintBottom_toTopOf="@id/guideline1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.66" />
 
-        <ImageButton
-            android:id="@+id/cell2_btn"
-            android:layout_width="@dimen/cellWidth"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/defaultMargin"
-            android:background="@android:color/transparent"
-            app:layout_constraintBottom_toTopOf="@id/guideline1"
-            app:layout_constraintStart_toEndOf="@id/cell1_btn"
-            app:layout_constraintTop_toTopOf="parent" />
+            <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/tic_tac_bg"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageButton
-            android:id="@+id/cell3_btn"
-            android:layout_width="@dimen/cellWidth"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/defaultMargin"
-            android:background="@android:color/transparent"
-            app:layout_constraintBottom_toTopOf="@id/guideline1"
-            app:layout_constraintStart_toEndOf="@id/cell2_btn"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageButton
+                    android:id="@+id/cell1_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="@{()->viewModel.onCell1Click()}"
+                    android:padding="@dimen/cellPadding"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toTopOf="@id/guideline1"
+                    app:layout_constraintEnd_toStartOf="@id/cell2_btn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:state="@{viewModel.cell1}" />
 
-        <ImageButton
-            android:id="@+id/cell4_btn"
-            android:layout_width="@dimen/cellWidth"
-            android:layout_height="0dp"
-            android:background="@android:color/transparent"
-            app:layout_constraintBottom_toTopOf="@id/guideline2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guideline1" />
+            <ImageButton
+                    android:id="@+id/cell2_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="@{()->viewModel.onCell2Click()}"
+                    android:padding="@dimen/cellPadding"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toTopOf="@id/guideline1"
+                    app:layout_constraintEnd_toStartOf="@id/cell3_btn"
+                    app:layout_constraintStart_toEndOf="@id/cell1_btn"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:state="@{viewModel.cell2}" />
 
-        <ImageButton
-            android:id="@+id/cell5_btn"
-            android:layout_width="@dimen/cellWidth"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/defaultMargin"
-            android:background="@android:color/transparent"
-            app:layout_constraintBottom_toTopOf="@id/guideline2"
-            app:layout_constraintStart_toEndOf="@id/cell4_btn"
-            app:layout_constraintTop_toBottomOf="@id/guideline1" />
+            <ImageButton
+                    android:id="@+id/cell3_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="@{()->viewModel.onCell3Click()}"
+                    android:padding="@dimen/cellPadding"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toTopOf="@id/guideline1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cell2_btn"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:state="@{viewModel.cell3}" />
 
-        <ImageButton
-            android:id="@+id/cell6_btn"
-            android:layout_width="@dimen/cellWidth"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/defaultMargin"
-            android:background="@android:color/transparent"
-            app:layout_constraintBottom_toTopOf="@id/guideline2"
-            app:layout_constraintStart_toEndOf="@id/cell5_btn"
-            app:layout_constraintTop_toBottomOf="@id/guideline1" />
+            <ImageButton
+                    android:id="@+id/cell4_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="@{()->viewModel.onCell4Click()}"
+                    android:padding="@dimen/cellPadding"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toTopOf="@id/guideline2"
+                    app:layout_constraintEnd_toStartOf="@id/cell5_btn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/guideline1"
+                    app:state="@{viewModel.cell4}" />
 
-        <ImageButton
-            android:id="@+id/cell7_btn"
-            android:layout_width="@dimen/cellWidth"
-            android:layout_height="0dp"
-            android:background="@android:color/transparent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/guideline2" />
+            <ImageButton
+                    android:id="@+id/cell5_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="@{()->viewModel.onCell5Click()}"
+                    android:padding="@dimen/cellPadding"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toTopOf="@id/guideline2"
+                    app:layout_constraintEnd_toStartOf="@id/cell6_btn"
+                    app:layout_constraintStart_toEndOf="@id/cell4_btn"
+                    app:layout_constraintTop_toBottomOf="@id/guideline1"
+                    app:state="@{viewModel.cell5}" />
 
-        <ImageButton
-            android:id="@+id/cell8_btn"
-            android:layout_width="@dimen/cellWidth"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/defaultMargin"
-            android:background="@android:color/transparent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/cell7_btn"
-            app:layout_constraintTop_toBottomOf="@id/guideline2" />
+            <ImageButton
+                    android:id="@+id/cell6_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="@{()->viewModel.onCell6Click()}"
+                    android:padding="@dimen/cellPadding"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toTopOf="@id/guideline2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cell5_btn"
+                    app:layout_constraintTop_toBottomOf="@id/guideline1"
+                    app:state="@{viewModel.cell6}" />
 
-        <ImageButton
-            android:id="@+id/cell9_btn"
-            android:layout_width="@dimen/cellWidth"
-            android:layout_height="0dp"
-            android:layout_marginStart="@dimen/defaultMargin"
-            android:background="@android:color/transparent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@id/cell8_btn"
-            app:layout_constraintTop_toBottomOf="@id/guideline2"/>
+            <ImageButton
+                    android:id="@+id/cell7_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="@{()->viewModel.onCell7Click()}"
+                    android:padding="@dimen/cellPadding"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/cell8_btn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/guideline2"
+                    app:state="@{viewModel.cell7}" />
 
+            <ImageButton
+                    android:id="@+id/cell8_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="@{()->viewModel.onCell8Click()}"
+                    android:padding="@dimen/cellPadding"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/cell9_btn"
+                    app:layout_constraintStart_toEndOf="@id/cell7_btn"
+                    app:layout_constraintTop_toBottomOf="@id/guideline2"
+                    app:state="@{viewModel.cell8}" />
+
+            <ImageButton
+                    android:id="@+id/cell9_btn"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@android:color/transparent"
+                    android:onClick="@{()->viewModel.onCell9Click()}"
+                    android:padding="@dimen/cellPadding"
+                    android:scaleType="centerInside"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/cell8_btn"
+                    app:layout_constraintTop_toBottomOf="@id/guideline2"
+                    app:state="@{viewModel.cell9}" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
